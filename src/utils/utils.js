@@ -1,3 +1,5 @@
+import { render } from './render'
+
 const PREVIEW_POSTS_KEY = 'igPreviewPostsV1'
 
 export function uid () {
