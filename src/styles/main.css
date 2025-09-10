@@ -1,0 +1,297 @@
+:root {
+    --bg: #0e0e10;
+    /* dark to blend in Notion dark mode too */
+    --panel: #16161a;
+    --muted: #9aa0a6;
+    --text: #f5f5f5;
+    --accent: #4f46e5;
+    --danger: #ef4444;
+    --radius: 14px;
+    --ig-max: 935px;
+    /* classic Instagram desktop width */
+    --tile-gap: 6px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.app {
+    width: 100%;
+    max-width: var(--ig-max);
+}
+
+.toolbar {
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
+
+.title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #1f2937;
+    color: #cbd5e1
+}
+
+.btn {
+    appearance: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: #222;
+    transition: transform .06s ease, background .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px)
+}
+
+.btn:active {
+    transform: translateY(0)
+}
+
+.btn.primary {
+    background: var(--accent)
+}
+
+.btn.ghost {
+    background: #1b1b1f;
+    color: #e5e7eb
+}
+
+.btn.danger {
+    background: var(--danger)
+}
+
+.btn.small {
+    padding: 8px 10px;
+    font-size: 12px
+}
+
+.grid {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--tile-gap);
+}
+
+.tile {
+    position: relative;
+    background: #111;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .06)
+}
+
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+
+.tile .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .35), transparent 40%);
+    opacity: 0;
+    transition: opacity .2s ease
+}
+
+.tile:hover .overlay {
+    opacity: 1
+}
+
+.tile .actions {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    gap: 6px
+}
+
+.chip {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(17, 17, 17, .55);
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, .1)
+}
+
+.iconbtn {
+    border: none;
+    background: rgba(0, 0, 0, .55);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, .12)
+}
+
+.iconbtn:hover {
+    background: rgba(0, 0, 0, .7)
+}
+
+.empty {
+    border: 2px dashed rgba(255, 255, 255, .1);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.empty p {
+    margin: 6px 0 0
+}
+
+.footer {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+dialog {
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    width: min(560px, 96vw);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+    background: var(--panel);
+    color: var(--text)
+}
+
+.modal {
+    padding: 18px
+}
+
+.modal h3 {
+    margin: 0 0 10px
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 10px 0
+}
+
+.field label {
+    font-size: 12px;
+    color: #cbd5e1
+}
+
+.field input[type="text"],
+.field input[type="url"],
+.field textarea {
+    width: 100%;
+    background: #0f0f12;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font: inherit;
+    resize: vertical
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.modal .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px
+}
+
+.dropzone {
+    border: 2px dashed rgba(255, 255, 255, .15);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    color: #cbd5e1
+}
+
+.dropzone.drag {
+    background: #101014
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+/* drag and drop indicator */
+.tile.dragging {
+    opacity: .4
+}
+
+.tile.placeholder {
+    outline: 2px dashed rgba(255, 255, 255, .25);
+    outline-offset: -6px
+}
+
+@media (max-width:700px) {
+    .grid {
+        gap: 4px
+    }
+
+    .btn {
+        padding: 9px 10px
+    }
+}
