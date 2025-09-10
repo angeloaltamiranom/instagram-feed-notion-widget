@@ -1,3 +1,4 @@
+import './styles/main.css'
 import { render } from './utils/render'
 import {
   uid,
